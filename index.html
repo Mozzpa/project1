@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, WebVR! • A-Frame</title>
+    <meta name="description" content="Hello, WebVR! • A-Frame">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+  </head>
+  
+  
+  
+  
+  <body>
+    
+    <a-scene background="color: #FAFAFA">
+      <!--Asset Management -->
+      <a-assets>
+ 
+        <a-asset-item id="chair-o" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fuploads_files_1938755_KAUSTBY.obj?v=1601487834780"></a-asset-item>
+        <a-asset-item id="chair-m" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fuploads_files_1938755_KAUSTBY.mtl?v=1601488046429"></a-asset-item>
+        <a-asset-item id="pillow-o" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FPillow1.obj?v=1601512748299"></a-asset-item>
+        <a-asset-item id="pillow-m" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FPillow1.mtl?v=1601512747902"></a-asset-item>
+        <a-asset-item id="alarm-o" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fmodel.obj?v=1601684839830"></a-asset-item>
+        <a-asset-item id="alarm-m" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fmaterials.mtl?v=1601684839749"></a-asset-item>
+        <a-asset-item id="tablet-o" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FTablet.obj?v=1601686368436"></a-asset-item>
+        <a-asset-item id="tablet-m" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FTablet.mtl?v=1601686368394"></a-asset-item>
+        <a-asset-item id="coffee-o" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fmodel.obj?v=1601689603983"></a-asset-item>
+        <a-asset-item id="coffee-m" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fmaterials.mtl?v=1601689603891"></a-asset-item>
+        <a-asset-item id="notebook-o" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fmodel.obj?v=1601690208911"></a-asset-item>
+        <a-asset-item id="notebook-m" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fmaterials.mtl?v=1601690208630"></a-asset-item>
+        <a-asset-item id="backpack-o" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fbackpackmodels.obj?v=1601690746830"></a-asset-item>
+        <a-asset-item id="backpack-m" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fbackpackmaterials.mtl?v=1601690746755"></a-asset-item>
+        <a-asset-item id="laptop-o" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FLaptop_01.obj?v=1601691745028"></a-asset-item>
+        <a-asset-item id="laptop-m" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FLaptop_01.mtl?v=1601691744937"></a-asset-item>
+        <a-asset-item id="tv-o" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Ftv.obj?v=1601692674399"></a-asset-item>
+        <a-asset-item id="tv-m" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Ftv.mtl?v=1601692674326"></a-asset-item>
+        <a-asset-item id="gamingchair-o" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fgamingchair.obj?v=1601694296405"></a-asset-item>
+        <a-asset-item id="gamingchair-m" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fgamingchair.mtl?v=1601694296136"></a-asset-item>
+        <a-asset-item id="monitor-o" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FIMac_01.obj?v=1601694887783"></a-asset-item>
+        <a-asset-item id="monitor-m" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FIMac_01.mtl?v=1601694887741"></a-asset-item>
+        <a-asset-item id="tower-o" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Ftower.obj?v=16016955948750"></a-asset-item>
+        <a-asset-item id="tower-m" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Ftower.mtl?v=1601695594823"></a-asset-item>
+        <a-asset-item id="tank-o" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Ftank.obj?v=1601696081014"></a-asset-item>
+        <a-asset-item id="tank-m" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Ftank.mtl?v=1601696080652"></a-asset-item>
+        <audio id="ocean" src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Focean.mp3?v=1601697080644"></audio>
+      </a-assets>
+      
+      <!-- Sky -->
+      <a-sky src="https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fsky1200.jpg?v=1601689088289"></a-sky>
+    <!-- Camera -->
+      <a-entity position="8 1.5 6"
+                rotation="0 270 0">
+      <a-camera look-controls wasd-controls="acceleration: 500">
+          <a-cursor></a-cursor>
+        </a-camera>
+      </a-entity>
+      
+    <!-- Lighting -->
+    <a-entity id="Lights" light="type: ambient; color: #BBB; intensity: 1"></a-entity>
+    <a-entity light="type: directional; color: #FFFFFF; intensity: 0.6 castShadow: true"
+              position="-0.5 1 1"></a-entity>
+      
+
+    <!-- Floor -->
+    <a-entity static-body geometry="primitive: box; depth: 25; height: 0.01; width: 25" position="0 0 0" material="
+src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fcarpet.jpg?v=1601489885249 repeat: 5 5"></a-entity>
+      
+    <!-- Ceiling -->
+    <a-entity static-body geometry="primitive: box; depth: 25; height: 0.01; width: 25" position="0 10 0" material="shader: standard; side: double; opacity: 1;
+src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FTexturesCom_ConcreteStucco0192_3_M.jpg?v=1601445781637; repeat: 1 1"></a-entity>
+      
+    <!-- Walls -->
+    <a-entity static-body geometry="primitive: box; depth: 1; height: 10; width: 25" position="-12 5 0" rotation="0 90 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FTexturesCom_ConcreteStucco0173_3_M.jpg?v=1601445364043; repeat: 1 1;"></a-entity>
+    <a-entity static-body geometry="primitive: box; depth: 1; height: 10; width: 25" position="12 5 0" rotation="0 90 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FTexturesCom_ConcreteStucco0173_3_M.jpg?v=1601445364043; repeat: 1 1"></a-entity>
+    <a-entity static-body geometry="primitive: box; depth: 1; height: 10; width: 25" position="0 5 12" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FTexturesCom_ConcreteStucco0173_3_M.jpg?v=1601445364043; repeat: 1 1"></a-entity>
+    <a-entity static-body geometry="primitive: box; depth: 1; height: 10; width: 25" position="0 5 -12" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FTexturesCom_ConcreteStucco0173_3_M.jpg?v=1601445364043; repeat: 1 1"></a-entity>
+      
+
+    <!-- Pillows -->
+    <a-entity obj-model="obj: #pillow-o; mtl: #pillow-m"
+              position="9.3 3 -10.5"
+              rotation="50 0 0"
+              scale="1 1 1"></a-entity>
+    <a-entity obj-model="obj: #pillow-o; mtl: #pillow-m"
+              position="7 3 -10.5"
+              rotation="50 0 0"
+              scale="1 1 1"></a-entity>
+   <!-- Backpack -->
+    <a-entity obj-model="obj: #backpack-o; mtl: #backpack-m"
+              position="11 2.8 -2.5"
+              rotation="0 180 0"
+              scale="4 4 4"></a-entity>
+  <!-- Notebook -->
+    <a-entity obj-model="obj: #notebook-o; mtl: #notebook-m"
+              position="3.6 2.2 -9.3"></a-entity>
+  <!-- Alarm Clock -->
+    <a-entity obj-model="obj: #alarm-o; mtl: #alarm-m"
+              position="3.3 2.3 -10.5"
+              rotation="0 200 0"
+              scale="4 4 4"></a-entity>
+  <!-- Tablet -->
+    <a-entity obj-model="obj: #tablet-o; mtl: #tablet-m"
+              position="4 2.2 -10.5"
+              rotation="0 200 0"
+              scale=".001 .001 .001"></a-entity>
+  <!-- Coffee -->
+    <a-entity obj-model="obj: #coffee-o; mtl: #coffee-m"
+              position="4 2.2 -10.5"
+              rotation="0 200 0"
+              scale=".35 .35 .35"></a-entity>
+      
+   <!-- chair -->   
+    <a-entity id="Chair" obj-model="obj: #chair-o; mtl: #chair-m"
+              position="-8 0 7"
+              scale="0.03 0.03 0.03"
+              shadow="receive:true"
+              visible="true"></a-entity>
+  <!-- Laptop -->
+    <a-entity id="Laptop" obj-model="obj: #laptop-o; mtl: #laptop-m"
+                rotation="270 60 0"
+                position="-7.5 2.2 9.3"
+                scale=".01 .01 .01"
+                visible="true"></a-entity>
+  <!-- TV -->
+      <a-entity id="TV" obj-model="obj: #tv-o; mtl: #tv-m"
+                rotation="180 320 0"
+                position="-8.3 8 10"
+                scale="1.5 1.5 1.5"
+                visible="false"></a-entity>
+      <!-- Gaming Chair -->
+      <a-entity id="Gamingchair" obj-model="obj: #gamingchair-o; mtl: #gamingchair-m"
+                rotation="0 180 0"
+                position="-8 1.3 7.2"
+                scale="2.5 2.5 2.5"
+                visible="false"
+                ></a-entity>
+    <!-- Monitors -->
+      <a-entity id="Monitor1" obj-model="obj: #tv-o; mtl: #tv-m"
+                rotation="0 180 0"
+                position="-7 2.7 10"
+                scale="0.5 0.5 0.5"
+                visible="false"
+                ></a-entity>      
+      <a-entity id="Monitor2" obj-model="obj: #tv-o; mtl: #tv-m"
+                rotation="0 180 0"
+                position="-9.1 2.7 10"
+                scale="0.5 0.5 0.5"
+                visible="false"
+                ></a-entity>
+      <!-- Tower -->
+      <a-entity id="Tower" obj-model="obj: #tower-o; mtl: #tower-m"
+                rotation="0 270 0"
+                position="-5 1 10"
+                scale="3 3 3"
+                visible="false"></a-entity>
+      <!-- Fish Tank -->
+      <a-entity id="Tank" obj-model="obj: #tank-o; mtl: #tank-m"
+                rotation="0 90 0"
+                scale="7 7 7"
+                position="-9.5 4 -1"
+                sound="src: #ocean; on: click"
+                visible="false">
+      <a-entity static-body geometry="primitive: box; depth: .5; height: .4; width: .75"
+                position=".02 -.4 -0.01"
+                material="src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fphoto-1550684376-efcbd6e3f031.jpg?v=1601489360996"></a-entity>
+      </a-entity>
+    <!-- Trash Can -->
+    <a-entity static-body geometry="primitive: cylinder; radius: .5; height: 2" position="-11 1 -11" material="shader: standard; roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FTexturesCom_HammeredBlackMetal_M.png?v=1601489260398"
+                ></a-entity>
+    <a-entity static-body geometry="primitive: cylinder; radius: .5; height: 0.2" position="-11 2.1 -11" material="shader: standard; roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fphoto-1550684376-efcbd6e3f031.jpg?v=1601489360996"
+                ></a-entity>
+    
+    <!-- Dresser 1 -->
+      <a-entity static-body geometry="primitive: box; depth: 3; height: 2.3; width: 1.5" position="6 0 -7" material="shader: standard; roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fphoto-1550684376-efcbd6e3f031.jpg?v=1601489360996">
+      <a-entity static-body geometry="primitive: box; depth: 2.5; height: 2; width: 1.1" position="-.25 0 0" material="shader: standard; roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fhardwoodfloor.jpg?v=1601687161874"></a-entity>      
+      </a-entity>
+      
+   <!-- Dresser 2 -->
+      <a-entity static-body geometry="primitive: box; depth: 3; height: 2.3; width: 1.5" position="8 0 -2.5" rotation= "0 90 0" material="shader: standard; roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fphoto-1550684376-efcbd6e3f031.jpg?v=1601489360996">
+      <a-entity static-body geometry="primitive: box; depth: 2.5; height: 2; width: 1.1" position="-.25 0 0" material="shader: standard; roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fhardwoodfloor.jpg?v=1601687161874"></a-entity>      
+      </a-entity>
+    <!-- Bed -->
+   <a-entity static-body geometry="primitive: box; depth: 10; height: 0.3; width: 6.3" position="8 1.5 -6.5" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Frm21-mixtexture-aew-39_1.jpg?v=1601489409651 repeat: 5 5"> 
+   <a-entity static-body geometry="primitive: box; depth: 9.5; height: 0.7; width:6.1" position="0.05 0.25 0" rotation="0 0 0" material="shader: standard; 
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FTexturesCom_FabricPatterns0120_3_S.jpg?v=1601509982356 repeat: 5 5"></a-entity>
+  
+      <a-entity static-body geometry="primitive: box; depth: .25; height: 2; width: 6.25" position="0 1.1 -4.8" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fphoto-1550684376-efcbd6e3f031.jpg?v=1601489360996 repeat: 5 5">
+      </a-entity>
+   <a-entity static-body geometry="primitive: cylinder; radius: 0.1; height: 2; width: 0.3" position="-2.8 -1 -3" rotation="-0.5 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Frm21-mixtexture-aew-39_1.jpg?v=1601489409651 repeat: 5 5"></a-entity>
+   <a-entity static-body geometry="primitive: cylinder; radius: 0.1; height: 2; width: 0.3" position="2.8 -1 -3" rotation="-0.5 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Frm21-mixtexture-aew-39_1.jpg?v=1601489409651 repeat: 5 5"></a-entity>
+   <a-entity static-body geometry="primitive: cylinder; radius: 0.1; height: 2; width: 0.3" position="-2.8 -1 3" rotation="-0.5 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Frm21-mixtexture-aew-39_1.jpg?v=1601489409651 repeat: 5 5"></a-entity>
+   <a-entity static-body geometry="primitive: cylinder; radius: 0.1; height: 2; width: 0.3" position="2.8 -1 3" rotation="-0.5 0 0" material="color:#FFF; shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Frm21-mixtexture-aew-39_1.jpg?v=1601489409651 repeat: 5 5"></a-entity> 
+    </a-entity>     
+      
+    <!-- Nightstand -->
+    <a-entity static-body geometry="primitive: box; depth: 2; height: 0.3; width: 2" position="3.3 2 -10" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Frm21-mixtexture-aew-39_1.jpg?v=1601489409651 repeat: 5 5">
+   <a-entity static-body geometry="primitive: box; depth: 2.05; height: 0.3; width: 2" position="0 -2 0" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Frm21-mixtexture-aew-39_1.jpg?v=1601489409651 repeat: 5 5"></a-entity>  
+    <a-entity static-body geometry="primitive: cylinder; radius: 0.1; height: 2; width: 0.3" position="-0.9 -1 -0.9" rotation="-0.5 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Frm21-mixtexture-aew-39_1.jpg?v=1601489409651 repeat: 5 5"></a-entity>
+    <a-entity static-body geometry="primitive: cylinder; radius: 0.1; height: 2; width: 0.3" position="0.9 -1 -0.9" rotation="-0.5 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Frm21-mixtexture-aew-39_1.jpg?v=1601489409651 repeat: 5 5"></a-entity>
+    <a-entity static-body geometry="primitive: cylinder; radius: 0.1; height: 2; width: 0.3" position="-0.9 -1 0.9" rotation="-0.5 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Frm21-mixtexture-aew-39_1.jpg?v=1601489409651 repeat: 5 5"></a-entity>
+    <a-entity static-body geometry="primitive: cylinder; radius: 0.1; height: 2; width: 0.3" position="0.9 -1 0.9" rotation="-0.5 0 0" material="color:#FFF; shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Frm21-mixtexture-aew-39_1.jpg?v=1601489409651 repeat: 5 5"></a-entity>
+    </a-entity>
+      
+    <!-- table -->
+    <a-entity static-body geometry="primitive: box; depth: 3; height: 0.3; width: 5" position="-8 2 10" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Frm21-mixtexture-aew-39_1.jpg?v=1601489409651 repeat: 5 5">
+    <a-entity static-body geometry="primitive: cylinder; radius: 0.1; height: 2; width: 0.3" position="-2.2 -1 -0.9" rotation="-0.5 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Frm21-mixtexture-aew-39_1.jpg?v=1601489409651 repeat: 5 5"></a-entity>
+    <a-entity static-body geometry="primitive: cylinder; radius: 0.1; height: 2; width: 0.3" position="2.2 -1 -0.9" rotation="-0.5 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Frm21-mixtexture-aew-39_1.jpg?v=1601489409651 repeat: 5 5"></a-entity>
+    <a-entity static-body geometry="primitive: cylinder; radius: 0.1; height: 2; width: 0.3" position="-2.2 -1 0.9" rotation="-0.5 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Frm21-mixtexture-aew-39_1.jpg?v=1601489409651 repeat: 5 5"></a-entity>
+    <a-entity static-body geometry="primitive: cylinder; radius: 0.1; height: 2; width: 0.3" position="2.2 -1 0.9" rotation="-0.5 0 0" material="color:#FFF; shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Frm21-mixtexture-aew-39_1.jpg?v=1601489409651 repeat: 5 5"></a-entity>
+    </a-entity>
+      
+    <!-- Door -->
+      <a-entity static-body geometry="primitive: box; depth: .25; height: 5.5; width: 2.5" position="11.50 2.5 7" rotation="0 90 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fimages.jpg?v=1601509374625">
+      </a-entity>
+   
+    <!-- Window -->
+      <a-entity id="Window" static-body geometry="primitive: box; depth: .25; height: 6; width: 3" visible= "true" position="-8 5 11.6" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FIMG_3392.jpg?v=1601510064559 repeat: 5 5">
+      </a-entity>
+      
+    <!-- Closets -->
+      <a-entity static-body geometry="primitive: box; depth: .25; height: 7; width: 4" position="8 3 11.5" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FWDCRFSC48FSRB3FNBORBBCOR.jpg?v=1601676585211 repeat: 5 5">
+      </a-entity>
+      <a-entity static-body geometry="primitive: box; depth: .25; height: 7; width: 4" position="4 3 11.5" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FWDCRFSC48FSRB3FNBORBBCOR.jpg?v=1601676585211 repeat: 5 5">
+      </a-entity>
+      <!-- Painting -->
+      <a-entity static-body geometry="primitive: box; depth: .25; height: 3; width: 7.25" position="0 6 -11.5" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FChanging-view-from-space.jpg?v=1601514474351 repeat: 5 5">
+      </a-entity>
+            <!-- Painting 2-->
+      <a-entity static-body geometry="primitive: box; depth: .25; height: 3; width: 2" position="-11.5 7 1" rotation="0 90 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fastronaut-1571693135.jpg?v=1601683502086 repeat: 5 5">
+      </a-entity>
+            <!-- Painting 3-->
+      <a-entity static-body geometry="primitive: box; depth: .25; height: 3; width: 2" position="-11.5 7 -4" rotation="0 90 0" material="shader: standard;
+roughness: 1; src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2Fmoon-waxing-crescent-earthshine-1-8-2019-Chuck-Reinhart-Vincennes-IN-e1547258318928.jpg?v=1601683647848 repeat: 5 5">
+      </a-entity>
+      <!-- Lighting Switch -->
+    <a-entity static-body geometry="primitive: box; depth: 0.1; height: 1; width: 0.5" position="11.50 3 5" rotation="0 90 0" material="color: #808080; shader: standard;
+roughness: 1">
+      <a-entity static-body geometry="primitive: box; depth: .2; height: 0.25; width: 0.25" position="0 0.2 0" rotation="0 0 0" material="color: #FFFFFF; shader: standard;
+roughness: 1"
+                  event-set__switchlights="_event:click; _target:#Lights; light.intensity: 1">
+      </a-entity>
+      <a-entity static-body geometry="primitive: box; depth: .2; height: 0.25; width: 0.25" position="0 -0.2 0" rotation="0 0 0" material="color: #000000; shader: standard;
+roughness: 1"
+                  event-set__switchlights="_event:click; _target:#Lights; light.intensity: 0.3">
+          </a-entity>
+    </a-entity>
+      <!-- COVID Switch -->
+    <a-entity static-body geometry="primitive: box; depth: 0.1; height: 1; width: 0.5" position="0 3 11.50" rotation="0 180 0" material="color: #808080; shader: standard;
+roughness: 1">
+      <a-entity static-body geometry="primitive: box; depth: .2; height: 0.25; width: 0.25" position="0 0.2 0" rotation="0 0 0" material="color: #FFFFFF; shader: standard;
+roughness: 1"
+                  event-set__windowcovered="_event:click; _target:#Window; material.src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FNm6eKY.jpg?v=1601494973024 repeat: 5 5"
+                  event-set__laptopnotvisible="_event:click; _target:#Laptop; visible: false"
+                  event-set__chairnotvisible="_event:click; _target:#Chair; visible: false"
+                  event-set__tvvisible="_event:click; _target:#TV; visible: true"
+                  event-set__gamingchairvis="_event:click; _target:#Gamingchair; visible: true"
+                  event-set__mon1vis="_event:click; _target:#Monitor1; visible: true"
+                  event-set__mon2vis="_event:click; _target:#Monitor2; visible: true"
+                  event-set__towervisible="_event:click; _target:#Tower; visible: true"
+                  event-set__tankvisible="_event:click; _target:#Tank; visible: true">
+          </a-entity>
+      <a-entity static-body geometry="primitive: box; depth: .2; height: 0.25; width: 0.25" position="0 -0.2 0" rotation="0 0 0" material="color: #000000; shader: standard;
+roughness: 1"
+                  event-set__windowopened="_event:click; _target:#Window; material.src: https://cdn.glitch.com/d88c1578-f78a-4f98-ad50-53af167c7b1c%2FIMG_3392.jpg?v=1601510064559 repeat: 5 5"  
+                  event-set__laptopvisible="_event:click; _target:#Laptop; visible: true"
+                  event-set__chairvisible="_event:click; _target:#Chair; visible: true"
+                  event-set__tvvisible="_event:click; _target:#TV; visible: false"
+                  event-set__gamingchairvis="_event:click; _target:#Gamingchair; visible: false"
+                  event-set__mon1vis="_event:click; _target:#Monitor1; visible: false"
+                  event-set__mon2vis="_event:click; _target:#Monitor2; visible: false"
+                  event-set__towerinvis="_event:click; _target:#Tower; visible: false"
+                  event-set__tankinvisible="_event:click; _target:#Tank; visible: false">
+          </a-entity>
+    </a-entity>
+      
+     <!-- Texts -->
+    <a-text id="instruction_lightswitch" side="double" color="white" position="11 3 6.4" scale="1 1 1" rotation="0 270 0" value="USE WASD 
+                                                                                                                                 TO MOVE"></a-text>
+    <a-text id="instruction_movement" side="double" color="black" position="11 4 3.9" scale="1 1 1" rotation="0 270 0" value="LIGHTS ON/OFF"></a-text>
+    <a-text id="instruction_covidbutton" side="double" color="black" position="0.75 4 11" scale="1 1 1" rotation="0 180 0" value="COVID ON/OFF"></a-text>
+    </a-scene>
+  </body>
+</html>
